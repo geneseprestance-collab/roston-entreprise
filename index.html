@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ROSTON</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#c9a04c;--dark:#030b1a}
+
+body{font-family:Poppins,sans-serif;background:#000;color:#fff;overflow-x:hidden}
+
+.hero{height:105vh;
+position:relative;
+    background:url('moi.png');
+    background-size:cover;
+
+    background-position:65% center;
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        rgba(2,8,20,.97) 0%,
+        rgba(2,8,20,.92) 28%,
+        rgba(2,8,20,.35) 45%,
+        rgba(2,8,20,.05) 70%
+    );
+}
+
+.hero:after{
+content:"";
+position:absolute;
+left:46%;
+top:0;width:220px;
+height:100%;
+background:linear-gradient
+(90deg,transparent,rgba(0,0,0,.25),transparent);
+}
+
+nav{
+position:absolute;
+z-index:5;top:32px;
+left:50px;right:50px;
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+
+.logo{letter-spacing:12px;
+font-size:22px;
+font-weight:600;
+}
+
+.menu{display:flex;gap:38px}
+
+.menu a,.cta{text-decoration:none;color:#fff}
+
+.menu a.active{color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:8px}
+
+.cta{background:var(--gold);color:#111;padding:10px 20px;font-weight:600}
+
+.content{
+    position:absolute;
+    z-index:4;
+
+    left:3vw;
+    top:19vh;
+
+    width:420px;
+}
+
+.kicker{color:var(--gold);letter-spacing:3px;margin-bottom:14px}
+
+h1{
+    font-family:"Playfair Display",serif;
+
+    font-size:38px;
+
+    line-height:.9;
+
+    letter-spacing:-2px;
+}
+
+.gold{color:var(--gold)}
+
+.line{width:30px;
+height:2px;
+background:var(--gold);
+margin:15px 0}
+
+.desc{
+    font-size:15px;
+    line-height:1.7;
+
+    max-width:380px;
+
+    opacity:.9;
+}
+
+.btns{display:flex;
+gap:20px;
+margin-top:25px;}
+
+.btn{
+padding:14px 28px;
+text-decoration:none;
+font-size:14px;
+}
+
+.btn.goldb{background:var(--gold);color:#111}
+
+.btn.out{border:1px solid var(--gold);color:#fff}
+
+.values{
+position:absolute;
+  right:2vw;
+top:110px;z-index:5;
+border:1px solid rgba(201,160,76,.6);
+padding:30px;
+width:150px;
+background:rgba(0,0,0,.15);
+backdrop-filter:blur(6px)}
+
+.values div{
+text-align:center;color:var(--gold);
+padding:10px 0}
+
+.values hr{
+border:none;
+height:1px;
+background:rgba(201,160,76,.3)}
+
+.quote{
+position:absolute;
+
+right:2.5vw;
+bottom:70px;      /* Remonte la citation */
+
+z-index:5;
+max-width:230px;
+}
+
+.quote .m{
+    font-size:90px;
+    color:var(--gold);
+    line-height:0.2;
+    margin-bottom:-10px;
+}
+
+.quote p{
+font-family:"Playfair Display",serif;
+font-size:20px;
+line-height:1.15}
+
+.quote .l{
+width:20px;
+height:2px;
+background:var(--gold);margin:10px 0}
+
+.quote span{color:var(--gold);letter-spacing:4px}
+
+.stats{
+position:absolute;
+left:0;
+right:5;
+bottom:25px;   /* augmente cette valeur pour remonter davantage */
+height:90px;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(0,0,0,.25);
+backdrop-filter:blur(10px);
+z-index:5;
+}
+
+.stat{padding:0 40px;
+border-right:1px solid rgba(255,255,255,.15);
+text-align:center}
+
+.stat:last-child{border:none}
+
+.num{
+    font-size:22px;
+}
+
+.lab{
+    font-size:13px;
+}
+
+@media (max-width: 1400px){
+
+    h1{
+        font-size:72px;
+    }
+
+    .content{
+        width:500px;
+    }
+
+    .quote{
+        max-width:280px;
+    }
+
+}
+
+@media (max-width: 1200px){
+
+    .values{
+        display:none;
+    }
+
+    h1{
+        font-size:64px;
+    }
+
+}
+
+@media (max-width: 992px){
+
+    .quote{
+        display:none;
+    }
+
+    h1{
+        font-size:56px;
+    }
+
+    .stats{
+        flex-wrap:wrap;
+        height:auto;
+        padding:20px;
+    }
+
+}
+
+
+
+/* ==========================
+   INTRO CINEMATIQUE ROSTON
+========================== */
+
+#intro{
+
+    position:fixed;
+    inset:0;
+
+    background:#030b1a;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+}
+
+.intro-logo{
+
+    position:relative;
+
+    font-size:clamp(4rem,9vw,8rem);
+
+    font-weight:700;
+
+    letter-spacing:18px;
+
+    overflow:hidden;
+}
+
+.intro-logo span{
+
+    opacity:0;
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #c9a04c,
+        #ffffff
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:logoReveal 3.5s forwards;
+    animation-delay:1.5s;
+}
+
+.gold-scan{
+
+    position:absolute;
+
+    top:-50%;
+    left:-40%;
+
+    width:25%;
+    height:200%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(201,160,76,.9),
+        transparent
+    );
+
+    filter:blur(12px);
+
+    animation:goldSweep 2.5s ease forwards;
+}
+
+.intro-quote{
+
+    margin-top:35px;
+
+    font-size:1.3rem;
+
+    color:rgba(255,255,255,.85);
+
+    opacity:0;
+
+    letter-spacing:2px;
+
+    animation:quoteReveal 3s forwards;
+    animation-delay:2.2s;
+}
+
+@keyframes goldSweep{
+
+    from{
+        left:-40%;
+    }
+
+    to{
+        left:140%;
+    }
+
+}
+
+@keyframes logoReveal{
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes quoteReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+
+section{padding:90px 8%}
+.section-title{
+font-family:"Playfair Display",serif;
+font-size:2.5rem;text-align:center;margin-bottom:20px
+}
+.section-sub{text-align:center;max-width:800px;margin:0 auto 50px;opacity:.8}
+
+.cards{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;
+}
+.card{
+background:#081425;border:1px solid rgba(201,160,76,.2);
+padding:30px;border-radius:12px;
+transition:.3s;
+}
+.card:hover{transform:translateY(-8px);border-color:var(--gold)}
+.card h3{color:var(--gold);margin-bottom:15px}
+
+.vision{
+background:linear-gradient(135deg,#081425,#0b1a33);
+text-align:center;
+}
+.vision p{max-width:900px;margin:auto;font-size:1.2rem;line-height:2}
+
+.partners{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;
+}
+.partner{
+border:1px solid rgba(201,160,76,.2);
+padding:35px;text-align:center;background:#081425
+}
+
+.cta-section{
+background:linear-gradient(135deg,var(--gold),#e2c27b);
+color:#111;text-align:center;
+}
+.cta-section h2{font-size:3rem;margin-bottom:20px}
+.cta-section a{
+display:inline-block;margin-top:15px;background:#081425;color:#fff;
+padding:15px 30px;text-decoration:none
+}
+
+footer{
+background:#020814;padding:40px;text-align:center;border-top:1px solid rgba(255,255,255,.1)
+}
+</style>
+</head>
+
+<body>
+<div id="intro">
+
+    <div class="intro-logo">
+
+        <div class="gold-scan"></div>
+
+        <span>ROSTON</span>
+
+    </div>
+
+    <div class="intro-quote">
+
+        Le futur s'enracine dans le présent.
+
+    </div>
+
+</div>
+
+<section class="hero">
+<nav>
+<div class="logo">ROSTON</div>
+<div class="menu">
+<a class="active" href="about.html">A PROPOS</a>
+</div>
+<a href="contact.html" class="cta">NOUS CONTACTER</a>
+</nav>
+
+<div class="content">
+
+<h1>De l'idée<br>à l'impact<br><span class="gold">durable.</span></h1>
+<div class="line"></div>
+<p class="desc">Nous accompagnons les professionnels et les organisations à chaque étape de leur développement, de la vision stratégique à la mise en œuvre concrète de leurs projets.</p>
+<div class="btns">
+<a href="services.html" class="btn goldb">NOS SERVICES</a>
+<a href="part.html" class="btn out">DEVENIR PARTENAIRE</a>
+</div>
+</div>
+
+<div class="values">
+<div>EXPERTISE</div><hr>
+<div>INTÉGRITÉ</div><hr>
+<div>INNOVATION</div><hr>
+<div>IMPACT</div>
+</div>
+
+<div class="quote">
+<div class="m">“</div>
+<p>Le futur s’enracine dans le présent.</p>
+<div class="l"></div>
+<span>ROSTON</span>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="num">50+</div><div class="lab">Projets réalisés</div></div>
+<div class="stat"><div class="num">98,7%</div><div class="lab">Satisfaction client</div></div>
+<div class="stat"><div class="num">12 500+</div><div class="lab">Heures d'accompagnement</div></div>
+<div class="stat"><div class="num">15</div><div class="lab">Experts engagés</div></div>
+</div>
+</section>
+
+
+
+<section>
+<h2 class="section-title">Nos domaines d'intervention</h2>
+<p class="section-sub">Des solutions concrètes pour le développement humain, économique et communautaire.</p>
+<div class="cards">
+<div class="card"><h3>Formation</h3><p>Informatique, entrepreneuriat, leadership, gestion de projets et développement personnel.</p></div>
+<div class="card"><h3>Jeunesse</h3><p>Programmes de sensibilisation, ateliers relais communautaires et engagement citoyen.</p></div>
+<div class="card"><h3>Entrepreneuriat</h3><p>Encadrement, coaching, incubation et suivi des initiatives innovantes.</p></div>
+<div class="card"><h3>Action Humanitaire</h3><p>Actions sociales, soutien communautaire et développement durable.</p></div>
+</div>
+</section>
+
+<section class="vision">
+<h2 class="section-title">Notre vision</h2>
+<p>
+Construire un écosystème où les talents, les organisations et les projets disposent des ressources nécessaires pour réussir durablement 
+et générer un impact positif au sein de leurs communautés.<br>
+
+Nous croyons qu'une jeunesse formée, engagée et accompagnée constitue la principale richesse pour bâtir des communautés résilientes, 
+innovantes et prospères. Notre ambition est de créer un écosystème où chaque initiative porteuse de changement peut trouver les ressources 
+nécessaires pour réussir.
+</p>
+</section>
+
+<section>
+<h2 class="section-title">Partenaires & Collaborations</h2>
+<p class="section-sub">ROSTON travaille avec les institutions publiques, les organisations internationales, les entreprises et la société civile.</p>
+<div class="partners">
+<div class="partner">Institutions publiques</div>
+<div class="partner">ONG & Associations</div>
+<div class="partner">Organisations internationales</div>
+<div class="partner">Entreprises privées</div>
+</div>
+</section>
+
+<section class="cta-section">
+<h2>Construisons l'avenir ensemble</h2>
+<p>Rejoignez notre mission pour développer le potentiel de la jeunesse et renforcer l'impact des projets communautaires.</p>
+<a href="https://wa.me/242064058878">Lancer une initiative</a>
+</section>
+
+<footer>
+© 2026 ROSTON • Organisation multiservices pour le développement humain, social et économique.
+</footer>
+
+<script>
+
+/* ==========================
+   CONFIGURATION
+========================== */
+
+window.addEventListener("load",()=>{
+const intro=document.getElementById("intro");
+setTimeout(()=>{
+intro.style.transition="opacity 2s ease";
+intro.style.opacity="0";
+setTimeout(()=>intro.remove(),2000);
+},4000);
+});
+</script>
+
+</body>
+</html>

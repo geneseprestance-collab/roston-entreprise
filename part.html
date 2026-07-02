@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Partenariat | ROSTON</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================= RESET ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+--gold:#c9a04c;
+}
+
+body{
+font-family:Poppins,sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+.hero{
+height:100vh;
+position:relative;
+background:url("moi.png");
+background-size:cover;
+background-position:65% center;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,
+rgba(2,8,20,.97),
+rgba(2,8,20,.85),
+rgba(2,8,20,.25));
+}
+
+nav{
+position:absolute;
+top:30px;
+left:50px;
+right:50px;
+display:flex;
+justify-content:space-between;
+z-index:5;
+}
+
+.logo{
+letter-spacing:10px;
+font-weight:600;
+}
+
+.menu a{
+color:#fff;
+text-decoration:none;
+margin:0 15px;
+}
+
+.cta{
+background:var(--gold);
+padding:10px 20px;
+color:#000;
+text-decoration:none;
+font-weight:600;
+}
+
+/* ================= CONTENT ================= */
+.content{
+position:absolute;
+top:22%;
+left:5%;
+width:460px;
+z-index:3;
+}
+
+h1{
+font-family:"Playfair Display";
+font-size:60px;
+line-height:1;
+}
+
+.gold{color:var(--gold)}
+
+.desc{
+margin-top:15px;
+opacity:.85;
+line-height:1.6;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 25px;
+background:var(--gold);
+color:#000;
+font-weight:600;
+border:none;
+cursor:pointer;
+}
+
+/* ================= SECTION ================= */
+section{
+padding:80px 10%;
+}
+
+.section-title{
+text-align:center;
+font-family:"Playfair Display";
+font-size:32px;
+}
+
+.section-sub{
+text-align:center;
+opacity:.7;
+max-width:700px;
+margin:15px auto 40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:#081425;
+padding:25px;
+border:1px solid rgba(201,160,76,.2);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:var(--gold);
+}
+
+.card h3{
+color:var(--gold);
+margin-bottom:10px;
+}
+
+/* ================= MODAL ================= */
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:99999;
+backdrop-filter:blur(6px);
+}
+
+.modal-content{
+background:#081425;
+padding:30px;
+width:90%;
+max-width:720px;
+border:1px solid var(--gold);
+border-radius:10px;
+max-height:90vh;
+overflow-y:auto;
+position:relative;
+}
+
+.close{
+position:absolute;
+top:10px;
+right:15px;
+cursor:pointer;
+color:var(--gold);
+font-size:20px;
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+background:#000;
+border:1px solid #333;
+color:#fff;
+}
+
+textarea{min-height:100px}
+
+.submit{
+background:var(--gold);
+color:#000;
+padding:12px;
+border:none;
+width:100%;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+text-align:center;
+padding:30px;
+background:#020814;
+margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+
+<nav>
+<div class="logo">ROSTON</div>
+<div class="menu">
+<a href="index.html">ACCUEIL</a>
+<a class="active" href="services.html">NOS SERVICES</a>
+</div>
+<a class="cta" href="contact.html">CONTACTS</a>
+</nav>
+
+<div class="content">
+<h1>Construire<br><span class="gold">ensemble</span><br>l’avenir</h1>
+
+<p class="desc">
+Rejoindre ROSTON, c’est participer à une vision stratégique orientée impact et développement durable.
+</p>
+
+<button class="btn" onclick="openModal()">Devenir partenaire</button>
+</div>
+
+</section>
+
+<!-- SECTION -->
+<section>
+<h2 class="section-title">Types de partenariat</h2>
+<p class="section-sub">
+Nous collaborons avec des organisations et des indépendants.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Financier</h3>
+<p>Soutien économique et investissements stratégiques.</p>
+</div>
+
+<div class="card">
+<h3>Matériel</h3>
+<p>Ressources, équipements et infrastructures.</p>
+</div>
+
+<div class="card">
+<h3>Humain</h3>
+<p>Expertise, compétences et collaboration.</p>
+</div>
+
+<div class="card">
+<h3>Stratégique</h3>
+<p>Co-développement et expansion internationale.</p>
+</div>
+
+</div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">✕</span>
+
+<form action="https://formspree.io/f/xrewyekw" method="POST">
+
+<h3>Formulaire de partenariat</h3>
+
+<select id="partnerType" name="type_partenaire" onchange="updateForm()" required>
+<option value="">Type de partenaire</option>
+<option value="organisation">Organisation</option>
+<option value="independant">Indépendant</option>
+</select>
+
+<div id="dynamicFields"></div>
+
+<select name="nature_partenariat" required>
+<option>Nature du partenariat</option>
+<option>Financier</option>
+<option>Matériel</option>
+<option>Humain</option>
+<option>Technique</option>
+<option>Stratégique</option>
+<option>Institutionnel</option>
+</select>
+
+<textarea name="description" placeholder="Décrivez votre proposition..." required></textarea>
+
+<button class="submit" type="submit">Envoyer</button>
+
+</form>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+© 2026 ROSTON GROUP - Le futur s'enracine dans le présent
+</footer>
+
+<script>
+
+function openModal(){
+document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+window.onclick=function(e){
+if(e.target.id==="modal"){
+closeModal();
+}
+}
+
+function updateForm(){
+
+const type=document.getElementById("partnerType").value;
+const box=document.getElementById("dynamicFields");
+
+if(type==="organisation"){
+box.innerHTML=`
+<input name="nom_responsable" placeholder="Nom du responsable" required>
+<input name="organisation" placeholder="Nom de l'organisation" required>
+<input name="poste" placeholder="Fonction">
+<input name="secteur" placeholder="Secteur d'activité">
+<input name="pays" placeholder="Pays" required>
+<input name="email" type="email" placeholder="Email professionnel" required>
+<input name="telephone" placeholder="Téléphone">
+`;
+}
+
+else if(type==="independant"){
+box.innerHTML=`
+<input name="nom_complet" placeholder="Nom complet" required>
+<input name="specialite" placeholder="Domaine d'expertise" required>
+<input name="experience" placeholder="Années d'expérience">
+<input name="pays" placeholder="Pays" required>
+<input name="email" type="email" placeholder="Email" required>
+<input name="telephone" placeholder="Téléphone">
+<input name="portfolio" placeholder="LinkedIn / Portfolio">
+`;
+}
+
+else{
+box.innerHTML="";
+}
+}
+
+</script>
+
+</body>
+</html>
