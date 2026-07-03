@@ -657,6 +657,35 @@ background:#020814;padding:40px;text-align:center;border-top:1px solid rgba(255,
 
     }
 
+
+/* === MASQUAGE PROPRE === */
+/* Par défaut */
+.close-menu {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+/* Menu mobile ouvert */
+.nav-open .close-menu {
+  display: block;
+}
+
+.nav-open .hamburger {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .btn-services,
+  .btn-partenaire {
+    display: none !important;
+  }
+}
 }
 </style>
 </head>
@@ -721,10 +750,23 @@ background:#020814;padding:40px;text-align:center;border-top:1px solid rgba(255,
     <a href="contact.html" class="mobile-contact">
 
         NOUS CONTACTER
-
     </a>
 
+<!-- Hamburger -->
+<div class="hamburger" id="hamburger">
+  ☰
 </div>
+
+<!-- Bouton de fermeture -->
+<div class="close-menu" id="closeMenu">
+  ✕
+</div>
+
+</div>
+
+
+
+
 <div class="content">
 
 <h1>De l'idée<br>à l'impact<br><span class="gold">durable.</span></h1>
@@ -733,6 +775,9 @@ background:#020814;padding:40px;text-align:center;border-top:1px solid rgba(255,
 <div class="btns">
 <a href="services.html" class="btn goldb">NOS SERVICES</a>
 <a href="part.html" class="btn out">DEVENIR PARTENAIRE</a>
+
+<a class="btn-services">Nos services</a>
+<a class="btn-partenaire">Devenir partenaire</a>
 </div>
 </div>
 
@@ -895,6 +940,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     });
+
+
+
 
 });
 </script>
