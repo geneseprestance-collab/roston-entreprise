@@ -25,18 +25,19 @@ background:rgba(3,11,26,.9);backdrop-filter:blur(10px)
 .menu a,.btn{text-decoration:none;color:#fff}
 
 .hero{
-height:130vh;
+height:100vh;
 display:flex;align-items:center;
 background:
-linear-gradient(rgba(3,11,26,.85),
+linear-gradient(rgba(3,11,26,.65),
 rgba(3,11,26,.9)),
-url('moi.png') center/cover;
+url('moi.png') center 20%/cover;
 }
+
 .hero-content{max-width:700px}
-.kicker{color:var(--gold);letter-spacing:3px;margin-bottom:15px}
+.kicker{color:var(--gold);letter-spacing:5px;margin-bottom:0px}
 h1{
 font-family:"Playfair Display",serif;
-font-size:5rem;line-height:.95;margin-bottom:20px
+font-size:4rem;line-height:.95;margin-bottom:10px
 }
 .gold{color:var(--gold)}
 .hero p{font-size:1.1rem;line-height:1.8;max-width:650px}
@@ -90,17 +91,14 @@ display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px
 }
-.stat{
-padding:40px;
-text-align:center;
-background:rgba(255,255,255,.03)
-}
+
 .stat h3{font-size:3rem;color:var(--gold)}
 .testimonials{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px
 }
+
 .testimonial{
 padding:30px;
 background:rgba(255,255,255,.03);
