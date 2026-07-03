@@ -241,6 +241,163 @@ h1{font-size:3.5rem}
 h1{font-size:2.8rem}
 .cta h2{font-size:2.5rem}
 }
+
+/=== SMARTPHONE ===/
+@media (max-width:768px){
+
+    nav{
+        padding:18px 5%;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    .hero{
+        min-height:100vh;
+        padding-top:120px;
+        background-position:center 70%;
+    }
+
+    .hero-content{
+        max-width:100%;
+        text-align:center;
+    }
+
+    .kicker{
+        font-size:.85rem;
+        letter-spacing:3px;
+    }
+
+    h1{
+        font-size:2.7rem;
+        line-height:1.1;
+    }
+
+    .hero p{
+        font-size:1rem;
+        max-width:100%;
+    }
+
+    .btns{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+
+    .title{
+        margin-bottom:50px;
+    }
+
+    .title h2{
+        font-size:2.2rem;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .method{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .testimonials{
+        grid-template-columns:1fr;
+    }
+
+    .contact-options{
+        grid-template-columns:1fr;
+    }
+
+    .contact-card{
+        padding:35px 25px;
+    }
+
+}
+
+
+/=== TABLETTES ===/
+@media (max-width:992px){
+
+    nav{
+        padding:20px 6%;
+    }
+
+    section{
+        padding:80px 6%;
+    }
+
+    h1{
+        font-size:3.8rem;
+    }
+
+    .title h2{
+        font-size:2.6rem;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .method{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .contact-options{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/=== iPhone SE / Petits Android ===/
+@media (max-width:480px){
+
+    .logo{
+        letter-spacing:5px;
+        font-size:1rem;
+    }
+
+    h1{
+        font-size:2.2rem;
+    }
+
+    .title h2{
+        font-size:1.9rem;
+    }
+
+    .hero p{
+        font-size:.95rem;
+    }
+
+    .card,
+    .step,
+    .stat,
+    .testimonial,
+    .contact-card{
+        padding:25px;
+    }
+
+    .cta h2{
+        font-size:2rem;
+    }
+
+}
 </style>
 </head>
 <body>
